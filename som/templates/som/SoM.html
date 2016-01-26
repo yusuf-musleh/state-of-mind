@@ -1,0 +1,26 @@
+{% load staticfiles %}
+
+<html>
+  <head>
+    <title>Welcome to State of Mind</title>
+    <script src="{% static 'som/js/jquery.js' %}"></script>
+    <script src="{% static 'som/js/som.js' %}"></script>
+    <script src="{% static 'som/js/script.js' %}"></script>
+    <link href="{% static 'som/css/som.css' %}" rel="stylesheet">
+    <link href="{% static 'som/css/bootstrap.min.css' }" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+  </head>
+  <body>
+    <div id="titlebox">
+    </div>
+    <canvas style="display: none; width: 200px; height: 200px" id="textCanvas"></canvas>
+    <div id="enterform">
+      <input id="idea" name="idea" type="text" placeholder="What are you thinking?" required></input>
+      <div id="enter">
+        <button class="btn btn-danger btn-lg" aria-label="Center Align" onclick="initiate_session()">Begin</button>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+#titlebox{
+
+	width: 80%;
+	height: 80%;
+    background-image: url("../images/logo.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-color: white;
+    margin: 0px auto;
+}
+
+#enterform{
+	width: 80%;
+	height: 20%;
+	background-color: white;
+	margin: 0px auto;
+	text-align:center;
+}
+
+#enter{
+	width: 200px;
+	height: 50px;
+	margin: 0px auto;
+	margin-top: 10px;
+}
+
+input{
+	font-size: 30px;
+	margin: 0px auto;
+}

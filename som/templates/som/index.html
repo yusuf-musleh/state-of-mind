@@ -1,0 +1,193 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/> <!--320-->
+
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <script type="text/javascript" src="{% static 'som/js/jquery-2.2.0.min.js' %}"></script>
+    <script src="{% static 'som/js/jquery.cookie.js' %}"></script>
+    <script src="{% static 'som/js/script.js' %}"></script>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>State of Mind</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="{% static 'som/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- Custom CSS -->
+    <link href="{% static 'som/css/simple-sidebar.css' %}" rel="stylesheet">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="mobile-web-app-capable" content="yes">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="icon"
+      type="image/png"
+      href="icon.png" />
+
+
+
+  </head>
+
+  <body>
+    <!-- <div id="container">
+      <button id="textTabBtn">Text</button>
+      <button id="imageTabBtn">Image</button>
+      <button id="doodleTabBtn">Doodle</button>
+    </div>
+
+    <select id="nodeSelection">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+    </select>
+
+    <div id="textTab" style="display: none">
+      <h1>TEXT</h1>
+      <canvas style="display: none; width: 200px; height: 200px" id="textCanvas"></canvas>
+      <input type="text" id="textInput"></input>
+      <input type="button" value="submit" onclick="submitText()"></input>
+    </div>
+
+    <div id="imageTab" style="display: none">
+      <h1>IMAGE</h1>
+
+      <input type="text" id="searchImage" placeholder="Search Image"></input>
+      <input type="button" id="searchImgBtn" value="Search" onclick="searchImage()"></input>
+      <br>
+
+      <select id="imageInput">
+      </select>
+      <input type="text" id="caption" placeholder="caption"></input>
+      <input type="button" value="submit" onclick="submitImage()"></input>
+
+    </div>
+
+    <div id="doodleTab" style="display: none">
+      <h1>DOODLE</h1>
+      <canvas id="canvas" width="500" height="300" style="border: 1px solid #ccc" ></canvas>
+      <input type="button" onclick="submitDoodle()" value="submit"></input>
+    </div> -->
+
+
+
+      <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="mapp"><i class="fa fa-text-width fa-2x"></i></div>
+        <a href="#" class="btn btn-default" id="submit"><i class="fa fa-arrow-up"></i></a>
+        <div id="hack">3</div>
+        <div id="child">hie</div>
+        <div id="page-content-wrapper">
+            <a href="#menu-toggle" class="btn btn-default" id="menu-toggle1"><i class="fa fa-bars"></i></a>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <a href="#" class="btn btn-default" id="Noshift"><i class="fa fa-arrow-left"></i></a>
+                        <div id="dummy2"></div>
+                        <div id = "canvasContainer">
+                            <canvas id="draw" width="400"
+                             height="200"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="page-content-wrapper2">
+            <a href="#menu-toggle" class="btn btn-default" id="menu-toggle2"><i class="fa fa-bars"></i></a>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <a href="#" class="btn btn-default" id="shift2"><i class="fa fa-arrow-right"></i></a>
+                        <a href="#" class="btn btn-default" id="Noshift2"><i class="fa fa-arrow-left"></i></a>
+                        <div id="dummy"></div>
+                        <div id="picContainer">
+                            <!-- <input type="text" id="searchImage" placeholder="Search Image"></input> -->
+      <!-- <input type="button" id="searchImgBtn" value="Search" onclick="searchImage()"></input> -->
+
+                            <input id ="searchImage"></input>
+                            <div id="picSearch" class = "btn btn-default" onclick="searchImage()"><i class="fa fa-search"></i></div>
+                            <div id ="picFrame">
+                                                              <input id="imageInput" style="display: none"></input>
+                                <div id = "khara">
+
+<!--                                     <div id = "pic"></div>
+                                    <div id = "pic"></div>
+                                    <div id = "pic"></div>
+                                    <div id = "pic"></div>
+                                    <div id = "pic"></div>
+                                    <div id = "pic"></div>
+                                    <div id = "pic"></div>
+                                    <div id = "pic"></div>
+                                    <div id = "pic"></div>
+                                    <div id = "pic"></div> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="page-content-wrapper3">
+            <a href="#menu-toggle" class="btn btn-default" id="menu-toggle3"><i class="fa fa-bars"></i></a>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <a href="#" class="btn btn-default" id="shift3"><i class="fa fa-arrow-right"></i></a>
+                        <div id="dummy"></div>
+                        <div id="textContainer">
+                            <input id ="textInput"></input>
+                            <canvas style="display: none; width: 200px; height: 200px" id="textCanvas"></canvas>
+                        </div>
+
+      <!-- <input type="text" id="textInput"></input> -->
+      <!-- <input type="button" value="submit" onclick="submitText()"></input> -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <!--<script src="js/touch.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{% static 'som/js/bootstrap.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'som/js/sketch.js' %}"></script>
+
+    <!-- Menu Toggle Script -->
+
+
+
+
+
+  </body>
+</html>
+
+
+
+
+
+

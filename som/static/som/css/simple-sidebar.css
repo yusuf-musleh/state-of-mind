@@ -1,0 +1,297 @@
+/*!
+ * Start Bootstrap - Simple Sidebar HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+/* Toggle Styles */
+
+#wrapper {
+    padding-left: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#wrapper.toggled {
+    padding-left: 250px;
+}
+
+#sidebar-wrapper {
+    z-index: 1000;
+    position: fixed;
+    left: 250px;
+    width: 0;
+    height: 100%;
+    margin-left: -250px;
+    overflow-y: auto;
+    background: #fff;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    background-color: #f1103a;
+    color: white;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    width: 250px;
+}
+
+#page-content-wrapper {
+    width: 100%;
+    height: 300px;
+    position: absolute;
+    padding: 15px;
+    display: none;
+}
+
+#page-content-wrapper2 {
+    width: 100%;
+    position: absolute;
+    padding: 15px;
+    display: none;
+}
+
+#page-content-wrapper3 {
+    width: 100%;
+    position: absolute;
+    padding: 15px;
+}
+
+#wrapper.toggled #page-content-wrapper {
+    position: absolute;
+    margin-right: -250px;
+}
+
+/* Sidebar Styles */
+
+.sidebar-nav {
+    margin-top: 50px;
+    position: absolute;
+    top: 0;
+    width: 250px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: scroll;
+    height: 100%;
+}
+
+.sidebar-nav li {
+    text-indent: 20px;
+    line-height: 40px;
+}
+
+.sidebar-nav li a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    overflow: hidden;
+    height: 40px;
+}
+
+.sidebar-nav li a:hover {
+    text-decoration: none;
+    color: #fff;
+    background: rgba(255,255,255,0.2);
+}
+
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+    text-decoration: none;
+}
+
+.sidebar-nav > .sidebar-brand {
+    height: 65px;
+    font-size: 18px;
+    line-height: 60px;
+}
+
+.sidebar-nav > .sidebar-brand a {
+    color: white;
+}
+
+.sidebar-nav > .sidebar-brand a:hover {
+    color: #fff;
+    background: none;
+}
+
+body {overflow: hidden; }
+
+
+#menu-toggle1{
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    z-index: 1000;
+}
+#menu-toggle2{
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    z-index: 1000;
+}
+#menu-toggle3{
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    z-index: 1000;
+}
+
+#Noshift{
+    float: right;
+}
+#shift2{
+    float: right;
+}
+#shift3{
+    float: right;
+}
+#Noshift2{
+    float: right;
+}
+
+#submit{
+    z-index: 1000;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+#hack{
+    display: none;
+}
+#child{
+    display: none;
+}
+.btn {
+    border: 0 none;
+    border-radius: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background: #f1103a;
+    color: white;
+    font-weight: bolder;
+}
+
+.btn:focus, .btn:active:focus, .btn.active:focus {
+    color: white;
+    background-color: #f1103a;
+}
+
+.btn:hover{
+    color: #f1103a;
+    background-color: white;
+    border: 1px solid #f1103a;
+}
+
+#mapp{
+    position: fixed;
+    bottom: 10px;
+    right: 45%;
+    background-color: #f1103a;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    color: white;
+    border-radius: 100px;
+    padding-top: 10px;
+}
+
+#idea{
+    text-align: center;
+    font-size: 32px;
+    width: 80%;
+}
+#textContainer{
+    margin: 0px auto;
+    width: 80%;
+    text-align: center;
+    background-color: white;
+    z-index: 100;
+    height: 80px;
+    padding-top: 10px;
+}
+
+#dummy{
+    margin: 0px auto;
+    height: 80px;
+    width: 30px;
+}
+
+#dummy2{
+    margin: 0px auto;
+    height: 30px;
+    width: 30px;
+}
+#picContainer{
+    margin: 0px auto;
+    z-index: 100;
+    background-color: white;
+    padding-top: 10px;
+    width: 90%;
+    text-align: center;
+}
+#picFrame{
+    margin: 0px auto;
+    width: 100%;
+    height: 100px;
+    margin-top: 5px;
+    overflow-x: scroll;
+    /*background-color: #f1103a;*/
+    overflow-y: hidden;
+}
+
+#canvasContainer{
+    margin: 0px auto;
+    background-color: white;
+    padding-top: 10px;
+    width: 90%;
+    text-align: center;
+    height: 200px;
+}
+.sidebar-nav li a{
+    float: right;
+    width: 180px;
+    overflow: hidden;
+}
+#draw{
+    border: 1px #f1103a solid;
+}
+
+#khara{
+    width: 9955px;
+    height: 120px;
+}
+
+.pic{
+    /*width: 90px;*/
+    max-height: 90px;
+    margin: 5px;
+    float: left;
+    margin-right: 0px;
+    /*background-color: pink;*/
+}
+
+.fa-trash{
+    float: left;
+    margin: 12px;
+    margin-top: 13px;
+    margin-bottom: 13px;
+}
+
+#picSearch{
+    margin-bottom: 10px;
+}
+
+    .portrait_mode {
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        transform: rotate(90deg);
+    }
+;
