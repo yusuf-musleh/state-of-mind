@@ -1,7 +1,7 @@
 # State of Mind
-State-Of-Mind is a Collaborative Brain-Storming Web Application with suggestions developed in a 24hr Hackathon.\
-The idea of the project is to have a **main screen**, which will be displayed to everyone through a large monitor/projector, and would display the mind map.\
-**Collaborators** will then seemlessly connect to the app using their preferred devices and begin brainstorming.\
+State-Of-Mind is a Collaborative Brain-Storming Web Application with suggestions developed in a 24hr Hackathon.<br />
+The idea of the project is to have a **main screen**, which will be displayed to everyone through a large monitor/projector, and would display the mind map.<br />
+**Collaborators** will then seemlessly connect to the app using their preferred devices and begin brainstorming.<br />
 In the middle of topic if collaborators are out of ideas they can then ask for **suggestions** from the app.
 
 ## Installation and Usage
@@ -12,7 +12,7 @@ First Install [Django](https://www.djangoproject.com/download/) and clone the pr
 $ cd state-of-mind
 ```
 
-Start the Django Server with your IP and any Port:
+Start the **Django Server** with your IP and any Port:
 
 ```sh
 $ python manage.py runserver XXX.XX.XX.XXX:PORT
@@ -44,14 +44,14 @@ They are in seperate pages that can be accessed through the **right & left arrow
 Type your thoughts/ideas in textbox and press the **up arrow** on bottom right of screen to insert Node with text.
 
 #### Inserting Image
-Navigate to the **Insert Image** page using the **right/left arrows** on top right corner. Search for an image you want to insert, click on the **search icon** to search for image. Once results are displayed, select an the image you want and press the **up arrow** on bottom right of the screen to insert Node with image.\
+Navigate to the **Insert Image** page using the **right/left arrows** on top right corner. Search for an image you want to insert, click on the **search icon** to search for image. Once results are displayed, select an the image you want and press the **up arrow** on bottom right of the screen to insert Node with image.<br/>
 _We are using [**getty image**](http://developers.gettyimages.com/en/) API for the image search._
 
 #### Getting Suggestions
 In a given node, if you need **suggestions**, navigate to the **insert image** page, and click on the **search icon** while the search bar is empty. It will **suggest an image relating the current node's topic and the previous one**.
 
 #### Inserting Doodle
-Navigate to the **Insert Doodle** page using the **right/left arrows** on top right corner. Doodle on the canvas using your finger/mouse. *(NOTE: We do **not** support all phone browsers)*
+Navigate to the **Insert Doodle** page using the **right/left arrows** on top right corner. Doodle on the canvas using your finger/mouse. _(NOTE: We do **not** support all phone browsers)_
 
 ### Navigating Between Nodes
 There's a **menu button** on the top left corner of the screen. It displays the names of all the nodes on the mind map. When you click on one of them, the **mind map** will go to the selected node, and any **new nodes added will be added to that node.**
