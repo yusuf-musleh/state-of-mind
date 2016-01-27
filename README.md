@@ -15,7 +15,7 @@ $ cd state-of-mind
 Start the **Django Server** with your IP and any Port:
 
 ```sh
-$ python manage.py runserver XXX.XX.XX.XXX:PORT
+$ python manage.py runserver XXX.XXX.XXX.XXX:PORT
 ```
 
 On the **main display** open a browser go to the following URL:
