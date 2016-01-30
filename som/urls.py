@@ -1,7 +1,9 @@
 from django.conf.urls import include, url
 from django.contrib import admin
 
-import views
+import som.views
+
+views = som.views
 
 urlpatterns = [
     url(r'^$', views.som, name='som'),

@@ -5,6 +5,7 @@ var min_dist = 10050;
 
 var default_size = [200, 200];
 var camera = [0, 0, 1.0];
+var edge_len = 250;
 var graph = [];
 /*[0, "hello", [0, 0], 10, [], [
   [1, "x", [200, 200], 1, [], [
@@ -33,16 +34,17 @@ function updateCamera() {
   var delta = [camera_target[0] - camera[0], camera_target[1] - camera[1]];
   var dist = Math.sqrt(delta[0]*delta[0] + delta[1]*delta[1]);
   var delta_time = Date.now() - zoom_timer;
-  camera[0] += delta[0] * 0.04;
-  camera[1] += delta[1] * 0.04;
+  delta[0] *= 0.05;
+  delta[1] *= 0.05;
+  camera[0] += delta[0];
+  camera[1] += delta[1];
 
-  var zoom_target = 3/Math.max(dist / 30, 1);
+  var zoom_target = 3/Math.max(Math.max(dist, 30) / 30, 1);
   delta_time = Math.max(delta_time, 0);
-  if (delta_time > 10000) {
-    zoom_target = avg_zoom;
-  }
-  if (delta_time > 15000)
+  if (delta_time > 10000)
     zoom_target = min_zoom;
+  else if (delta_time > 5000)
+    zoom_target = avg_zoom;
   camera[2] += (zoom_target - camera[2]) * 0.05;
 /*
   delta_time = Math.max(delta_time, 0);
@@ -129,10 +131,10 @@ $(document).ready(function () {
 
   setInterval(function () {
     if (graph.length) {
+      updateCamera();
       graph = computeGravitationForAllGraph(graph, graph);
       graph = makeGraph(graph);
       graph = applyGravitation(graph, 0.2);
-      updateCamera();
     }
   }, 50);
 
@@ -222,7 +224,19 @@ function computeGravitationForAllGraph(source, g) {
 }
 
 function computeGravitation(source, target, dir) {
+  if (source[0] == graph[0])
+    return source;
+
   var delta = [target[2][0] - source[2][0], target[2][1] - source[2][1]];
+  var lenSq = delta[0]*delta[0] + delta[1]*delta[1];
+  var len = Math.sqrt(lenSq);
+  var target_lenSq = edge_len;
+  var power = (len - target_lenSq) * 0.001;
+
+  if (dir > 0 || power < 0)
+    source[4].push([delta[0] * power,
+                    delta[1] * power]);
+
   var G = 9.8;
   var lenSq = delta[0]*delta[0] + delta[1]*delta[1];
   var len = Math.sqrt(lenSq);
@@ -230,16 +244,10 @@ function computeGravitation(source, target, dir) {
   var fdir;
 
   if (dir > 0) { // target is pulling source
-    if (len < 10)
-      fdir = [0, 0];
-    else
-      fdir = [delta[0] * len * 0.002, delta[1] * len * 0.002];
+    fdir = [delta[0] * len * 0.0001, delta[1] * len * 0.0001];
     console.log(target[0] + " is pulling " + source[0]);
   } else { // target is repelling source
-    if (lenSq < 0.001)
-      fdir = [0,0];//-100, 100];
-    else
-      fdir = [-delta[0] * 20000 / lenSq, -delta[1] * 20000 / lenSq];
+    fdir = [-delta[0] * 10000 / lenSq, -delta[1] * 10000 / lenSq];
     console.log(target[0] + " is repelling " + source[0]);
   }
   if (fdir[0] && fdir[1]) {

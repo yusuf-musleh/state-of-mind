@@ -1,7 +1,7 @@
 from django.shortcuts import render, HttpResponse, HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from django.views.decorators.csrf import csrf_exempt
-from models import *
+from som.models import *
 import requests, json
 from django.template import Context
 
@@ -86,8 +86,8 @@ def getTextInput(request):
 	caption = request.GET.get('caption')
 	selectedNode = int(request.GET.get('selectedNode'))
 
-	print "got text " + text
-	print "node: " + str(selectedNode)
+	print ("got text " + text)
+	print ("node: " + str(selectedNode))
 
 	if selectedNode == -1:
 		parent = Node.objects.get(parent=None)
@@ -119,7 +119,7 @@ def searchImage(request):
 
 
 	query.replace(" ", "+")
-	print "YOOOOOO"
+	print ("YOOOOOO")
 	print (query)
 	url = "https://api.gettyimages.com/v3/search/images?phrase=" + query
 	header = {'Api-Key': '8ur8fhrrg6kgcckfz5er58vz'}
@@ -133,7 +133,7 @@ def getImageInput(request):
 	image = request.GET.get('image')
 	selectedNode = int(request.GET.get('selectedNode'))
 	caption = request.GET.get('caption')
-	print "got image " + image
+	print ("got image " + image)
 	#print "node: " + selectedNode
 
 	if caption == "":
@@ -163,7 +163,7 @@ def getDoodleInput(request):
 	else:
 		parent = Node.objects.get(id=selectedNode)
 
-	print "got doodle " + doodle
+	print ("got doodle " + doodle)
 
 	n = Node(parent=parent, text=None, caption=caption, image=doodle, doodle=None)
 	n.save()
